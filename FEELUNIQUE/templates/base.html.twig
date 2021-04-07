@@ -26,7 +26,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link {% if current_menu is defined and current_menu == 'properties' %} active {% endif %}" href="{{path('property.index')}}">Nos articles</a>
+                        <a class="nav-link {% if current_menu is defined and current_menu == 'articles' %} active {% endif %}" href="{{path('articles')}}">Nos articles</a>
                     </li>
                 </ul>
                 {% if app.user %}

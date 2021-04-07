@@ -4,11 +4,11 @@ namespace App\Controller;
 
 use App\Entity\Article;
 use App\Repository\ArticleRepository;
-use http\Env\Request;
-use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Knp\Component\Pager\PaginatorInterface;
 
 class ArticlesController extends AbstractController
 {
@@ -21,7 +21,7 @@ class ArticlesController extends AbstractController
     {
         $this->repository = $repository;
     }
-
+/*
     public function index(PaginatorInterface $paginator, Request  $request) : Response{
         $article = $paginator->paginate(
             $this->repository->findAllVisibleQuery(),
@@ -31,17 +31,21 @@ class ArticlesController extends AbstractController
             'article' => $article,
             'current_menu' =>$article
         ]);
-    }
+    }*/
+
     /**
      * @Route("/articles", name="articles")
      * @return Response
      */
 
-    public function createArticle(): Response
+    public function createArticle(Request $request, PaginatorInterface $paginator): Response
     {
-        $em = $this->getDoctrine()->getManager();
-        $repository = $em->getRepository(Article::class);
-        $articles = $repository->findAll();
+        $donness = $this->getDoctrine()->getRepository(Article::class)->findAll();
+        $articles = $paginator->paginate(
+            $donness,
+            $request->query->getInt('page', 1),
+            12
+        );
 
         return $this->render('articles/index.html.twig', [
             'articles' => $articles,

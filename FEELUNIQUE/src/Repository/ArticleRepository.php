@@ -34,13 +34,13 @@ class ArticleRepository extends ServiceEntityRepository
 
     /**
      * @return Query
-     */
+
     public function findAllVisibleQuery() : Query
     {
         return $this->findVisibleQuery()
             ->getQuery();
     }
-
+     */
     // /**
     //  * @return Article[] Returns an array of Article objects
     //  */
