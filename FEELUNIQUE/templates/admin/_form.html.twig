@@ -9,6 +9,8 @@
     <div class="row">
         <div class="col-md-6">{{ form_row(form.description) }}</div>
         <div class="col-md-6">{{ form_row(form.category) }}</div>
+        <div class="col-md-6">{{ form_row(form.imageFile) }}</div>
+
     </div>
         {{ form_widget(form)}}
         <button class="btn btn-primary mt-4">{{button|default('Enregistrer')}}</button>

@@ -53,7 +53,6 @@
             $session->set('panier', $panier);
 
             return $this->redirectToRoute("cart_index");
-
         }
 
         /**

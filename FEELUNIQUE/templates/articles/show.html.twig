@@ -10,7 +10,9 @@
                 <aside class="col-md-6">
                     <article class="gallery-wrap">
                         <div class="card img-big-wrap">
-                            <a href="#"> <img src=""></a>
+                            {% if article.filename %}
+                                <img alt="card-img-top" src=" {{ vich_uploader_asset(article, 'imageFile') }}" style="width: 100%; height: auto;">
+                            {% endif %}
                         </div>
                     </article> <!-- gallery-wrap .end// -->
                 </aside>

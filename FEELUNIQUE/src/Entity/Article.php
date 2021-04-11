@@ -5,13 +5,17 @@ namespace App\Entity;
 use App\Repository\ArticleRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Cocur\Slugify\Slugify;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 
 /**
  * @ORM\Entity(repositoryClass=ArticleRepository::class)
  * @UniqueEntity("title")
+ * @Vich\Uploadable
  */
 class Article
 {
@@ -30,6 +34,18 @@ class Article
      * @ORM\Column(type="integer")
      */
     private $id;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @var string|null
+     */
+    private $file_name;
+
+    /**
+     * @Vich\UploadableField(mapping="article_image", fileNameProperty="file_name")
+     * @var File|null
+     */
+    private $imageFile;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -63,6 +79,11 @@ class Article
      * @Assert\Range(min=0, max=100)
      */
     private $quantity;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $updated_at;
 
 
     public function getId(): ?int
@@ -158,6 +179,58 @@ class Article
     public function setQuantity(int $quantity): self
     {
         $this->quantity = $quantity;
+
+        return $this;
+    }
+
+    /**
+     * @return File|null
+     */
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
+
+    /**
+     * @param File|null $imageFile
+     * @return Article
+     */
+    public function setImageFile(?File $imageFile): Article
+    {
+        $this->imageFile = $imageFile;
+        if ($this->imageFile instanceof UploadedFile){
+            $this->updated_at = new \DateTime('now');
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getFileName(): ?string
+    {
+        return $this->file_name;
+    }
+
+    /**
+     * @param string|null $file_name
+     * @return Article
+     */
+    public function setFileName(?string $file_name): Article
+    {
+        $this->file_name = $file_name;
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updated_at;
+    }
+
+    public function setUpdatedAt(?\DateTimeInterface $updated_at): self
+    {
+        $this->updated_at = $updated_at;
 
         return $this;
     }

@@ -14,9 +14,15 @@
     {% for article in articles %}
         <div class="col-md-3  mt-4">
             <div class="card card-product-grid">
+                {% if article.filename %}
+                    <img alt="card-img-top" src=" {{ vich_uploader_asset(article, 'imageFile') }}" style="width: 100%; height: auto;">
+                {% else %}
+                    <img alt="card-img-top" src=" {{ '/images/articles/empty.jpg' }}" style="width: 100%; height: auto;">
+                {% endif %}
                 <div class="card-body">
+
                     <div class="img-wrap">
-                        <img src="">
+
                     </div>
                     <figcaption class="info-wrap">
                         <a class="text-decoration-none"href="{{ path('article.show', {id: article.id, slug: article.slug})}}">{{ article.title }}</a>
