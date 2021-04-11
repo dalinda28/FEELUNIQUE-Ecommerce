@@ -1,9 +1,11 @@
 <?php
+namespace Doctrine\Bundle\FixturesBundle;
 
 use App\Kernel;
 use Symfony\Component\Dotenv\Dotenv;
 use Symfony\Component\ErrorHandler\Debug;
 use Symfony\Component\HttpFoundation\Request;
+
 
 require dirname(__DIR__).'/vendor/autoload.php';
 

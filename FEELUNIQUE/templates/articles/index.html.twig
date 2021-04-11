@@ -23,7 +23,7 @@
                         <p class="text-muted">{{ article.categoryType }} </p>
                     </figcaption>
                     <div class="mt-2">
-                        <a href="" class="btn btn-sm btn-outline-primary float-right">Acheter</a>
+                        <a href="{{path('cart_add', {id: article.id})}}"  class="btn btn-sm btn-outline-primary float-right">Acheter</a>
                         <i class="fas fa-shopping-cart"></i>
                     </div>
                     <div class="font-weight-bold card-text">{{ article.formattedPrice }} €</div>
