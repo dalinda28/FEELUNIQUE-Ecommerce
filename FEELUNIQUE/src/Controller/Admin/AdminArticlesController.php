@@ -51,7 +51,7 @@
                 $this->em->persist($article);
                 $this->em->flush();
                 $this->addFlash('success', 'Bien créé avec succés');
-                return $this->redirectToRoute('admin.article.index');
+                return $this->redirectToRoute('admin.articles.index');
             }
             return $this->render('admin/new.html.twig', [
                 'article' => $article,
@@ -74,7 +74,7 @@
             {
                 $this->em->flush();
                 $this->addFlash('success', 'Bien modifié avec succés');
-                return $this->redirectToRoute('admin.article.index');
+                return $this->redirectToRoute('admin.articles.index');
             }
             return $this->render('admin/edit.html.twig', [
                 'article' => $article,
@@ -93,7 +93,7 @@
             $this->em->remove($article);
             $this->em->flush();
             $this->addFlash('success', 'Bien supprimé avec succés');
-            return $this->redirectToRoute('admin.article.index');
+            return $this->redirectToRoute('admin.articles.index');
         }
     }
 ?>

@@ -14,16 +14,22 @@
     {% for article in articles %}
         <div class="col-md-3  mt-4">
             <div class="card card-product-grid">
+                {% if article.filename %}
+                    <img alt="card-img-top" src=" {{ vich_uploader_asset(article, 'imageFile') }}" style="width: 100%; height: auto;">
+                {% else %}
+                    <img alt="card-img-top" src=" {{ '/images/articles/empty.jpg' }}" style="width: 100%; height: auto;">
+                {% endif %}
                 <div class="card-body">
+
                     <div class="img-wrap">
-                        <img src="">
+
                     </div>
                     <figcaption class="info-wrap">
                         <a class="text-decoration-none"href="{{ path('article.show', {id: article.id, slug: article.slug})}}">{{ article.title }}</a>
                         <p class="text-muted">{{ article.categoryType }} </p>
                     </figcaption>
                     <div class="mt-2">
-                        <a href="" class="btn btn-sm btn-outline-primary float-right">Acheter</a>
+                        <a href="{{path('cart_add', {id: article.id})}}"  class="btn btn-sm btn-outline-primary float-right">Acheter</a>
                         <i class="fas fa-shopping-cart"></i>
                     </div>
                     <div class="font-weight-bold card-text">{{ article.formattedPrice }} €</div>
