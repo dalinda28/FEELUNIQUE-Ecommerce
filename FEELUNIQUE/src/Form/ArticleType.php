@@ -17,7 +17,6 @@ class ArticleType extends AbstractType
             ->add('title')
             ->add('description')
             ->add('price')
-            ->add('image')
             ->add('category', ChoiceType::class, [
                 'choices' => array_flip ( Article::CATEGORIES )
             ])

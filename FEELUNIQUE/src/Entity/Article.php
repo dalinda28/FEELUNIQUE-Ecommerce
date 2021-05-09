@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ArticleRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Cocur\Slugify\Slugify;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -19,12 +21,12 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  */
 class Article
 {
-    const CATEGORIES =[
+    const CATEGORIES = [
         0 => 'Bijoux et accessoires',
         1 => 'Vêtements et chaussures',
         2 => 'Maison et Déco',
-        3 => 'Art et collections', 
-        4 => ' Fournitures créatives',
+        3 => 'Art et collections',
+        4 => 'Fournitures créatives',
         5 => 'Jouets et divertissements'
     ];
 
@@ -67,11 +69,6 @@ class Article
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $image = false;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
     private $category = false;
 
     /**
@@ -84,6 +81,16 @@ class Article
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $updated_at;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Category::class, inversedBy="articles")
+     */
+    private $categories;
+
+    public function __construct()
+    {
+        $this->categories = new ArrayCollection();
+    }
 
 
     public function getId(): ?int
@@ -103,7 +110,7 @@ class Article
         return $this;
     }
 
-    public function getSlug() : String
+    public function getSlug(): string
     {
         return (new Slugify())->Slugify($this->title);
     }
@@ -139,20 +146,9 @@ class Article
      */
     public function getFormattedPrice(): string
     {
-        return number_format($this->price,  0, '', ',');
+        return number_format($this->price, 0, '', ',');
     }
 
-    public function getImage(): ?string
-    {
-        return $this->image;
-    }
-
-    public function setImage(string $image): self
-    {
-        $this->image = $image;
-
-        return $this;
-    }
 
     public function getCategory(): ?string
     {
@@ -166,7 +162,7 @@ class Article
         return $this;
     }
 
-    public function getCategoryType() : string
+    public function getCategoryType(): string
     {
         return self::CATEGORIES[$this->category];
     }
@@ -198,7 +194,7 @@ class Article
     public function setImageFile(?File $imageFile): Article
     {
         $this->imageFile = $imageFile;
-        if ($this->imageFile instanceof UploadedFile){
+        if ($this->imageFile instanceof UploadedFile) {
             $this->updated_at = new \DateTime('now');
         }
 
@@ -231,6 +227,30 @@ class Article
     public function setUpdatedAt(?\DateTimeInterface $updated_at): self
     {
         $this->updated_at = $updated_at;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Category[]
+     */
+    public function getCategories(): Collection
+    {
+        return $this->categories;
+    }
+
+    public function addCategory(Category $category): self
+    {
+        if (!$this->categories->contains($category)) {
+            $this->categories[] = $category;
+        }
+
+        return $this;
+    }
+
+    public function removeCategory(Category $category): self
+    {
+        $this->categories->removeElement($category);
 
         return $this;
     }

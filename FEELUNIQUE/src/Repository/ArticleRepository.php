@@ -6,6 +6,7 @@ use App\Entity\Article;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\Query;
 use Doctrine\Persistence\ManagerRegistry;
+use App\Data\SearchData;
 
 /**
  * @method Article|null find($id, $lockMode = null, $lockVersion = null)
@@ -21,52 +22,51 @@ class ArticleRepository extends ServiceEntityRepository
     }
 
     /**
+     *  Cette fonction récupere les produits en lien avec une recherche
      * @return Article[]
      */
-    public function findquantity() : array
+    public function findSearch(SearchData $search): array
+    {
+
+        $query = $this
+            ->createQueryBuilder('p')
+            ->select('c', 'p')
+            ->join('p.categories', 'c');
+
+        if (!empty($search->q)) {
+            $query = $query
+                ->andWhere()('p.name LIKE :q')
+                    ->setParameter('q', "% { $search->q }%");
+            }
+
+        if (!empty($search->min)) {
+            $query = $query
+                ->andWhere()('p.price LIKE :min')
+                    ->setParameter('min', "% { $search->min }%");
+            }
+        if (!empty($search->max)) {
+            $query = $query
+                ->andWhere()('p.price LIKE :max')
+                    ->setParameter('max', "% { $search->max }%");
+            }
+        if (!empty($search->categories)) {
+            $query = $query
+                ->andWhere()('p.id IN (:categories)')
+                    ->setParameter('categories', $search->categories);
+            }
+
+        return $query->getQuery()->getResult();
+    }
+
+    /**
+     * @return Article[]
+     */
+    public function findquantity(): array
     {
         return $this->createQueryBuilder('p')
             ->where('p.quantity >= 0')
             ->getQuery()
             ->getResult();
     }
-
-
-    /**
-     * @return Query
-
-    public function findAllVisibleQuery() : Query
-    {
-        return $this->findVisibleQuery()
-            ->getQuery();
-    }
-     */
-    // /**
-    //  * @return Article[] Returns an array of Article objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('a')
-            ->andWhere('a.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('a.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?Article
-    {
-        return $this->createQueryBuilder('a')
-            ->andWhere('a.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }
+

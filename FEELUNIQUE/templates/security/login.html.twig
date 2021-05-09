@@ -5,12 +5,12 @@
 {% block body %}
 
     {% if error %}
-      <div class="alert alert-danger">
-         {{ error.messageKey | trans(error.messagedata, 'security') }}
-    </div>
+        <div class="alert alert-danger">
+            {{ error.messageKey | trans(error.messagedata, 'security') }}
+        </div>
     {% endif %}
 
-    <div class="container mt-4"> 
+    <div class="container mb-5" style="width: 500px; margin-top: 100px; margin-left: 500px;">
         <form action="{{ path('login') }}" method="post">
             <div class="form-group">
                 <label for="username">Nom d'utilisateur</label>
@@ -23,5 +23,6 @@
 
             <button type="submit" class="btn btn-primary">Se connecter</button>
         </form>
+        <button type="submit"><a class="nav-link" href="{{ path('app_register') }}">S'enregistrer</a></button>
     </div>
 {% endblock %}

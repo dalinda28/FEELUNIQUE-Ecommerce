@@ -1,20 +1,17 @@
-{{ form_start(form)}}
-    <div class="row">
-        <div class="col-md-6">{{ form_row(form.title) }}</div>
-        <div class="col-md-6">{{ form_row(form.image) }}</div>
-        <div class="col-md-6">{{ form_row(form.price) }}</div>
-        <div class="col-md-6">{{ form_row(form.quantity) }}</div>
-
-    </div>
-    <div class="row">
-        <div class="col-md-6">{{ form_row(form.description) }}</div>
-        <div class="col-md-6">{{ form_row(form.category) }}</div>
-        <div class="col-md-6">{{ form_row(form.imageFile) }}</div>
-
-    </div>
-        {{ form_widget(form)}}
-        <button class="btn btn-primary mt-4">{{button|default('Enregistrer')}}</button>
-{{ form_end(form)}}
+{{ form_start(form) }}
+<div class="row">
+    <div class="col-md-6 mt-3">{{ form_row(form.title) }}</div>
+    <div class="col-md-6 mt-3">{{ form_row(form.price) }}</div>
+    <div class="col-md-6 mt-3">{{ form_row(form.quantity) }}</div>
+    <div class="col-md-6 mt-3">{{ form_row(form.description) }}</div>
+</div>
+<div class="row">
+    <div class="col-md-6 mt-3">{{ form_row(form.category) }}</div>
+    <div class="col-md-6 mt-3">{{ form_row(form.imageFile) }}</div>
+</div>
+{{ form_widget(form) }}
+<button class="btn btn-primary mt-4">{{ button|default('Enregistrer') }}</button>
+{{ form_end(form) }}
 
 
 
