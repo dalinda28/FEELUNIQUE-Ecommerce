@@ -25,7 +25,11 @@ class Article
         0 => 'Bijoux et accessoires',
         1 => 'Vêtements et chaussures',
         2 => 'Maison et Déco',
+<<<<<<< Updated upstream
         3 => 'Art et collections',
+=======
+        3 => 'Art et collections', 
+>>>>>>> Stashed changes
         4 => 'Fournitures créatives',
         5 => 'Jouets et divertissements'
     ];
@@ -66,6 +70,10 @@ class Article
      */
     private $price;
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     /**
      * @ORM\Column(type="string", length=255)
      */
@@ -146,7 +154,11 @@ class Article
      */
     public function getFormattedPrice(): string
     {
+<<<<<<< Updated upstream
         return number_format($this->price, 0, '', ',');
+=======
+        return number_format($this->price,  0, '', ',');
+>>>>>>> Stashed changes
     }
 
 

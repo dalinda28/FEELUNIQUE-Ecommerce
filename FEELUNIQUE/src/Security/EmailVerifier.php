@@ -54,5 +54,8 @@ class EmailVerifier
         $this->entityManager->flush();
     }
 }
+<<<<<<< Updated upstream
 
 ?>
+=======
+>>>>>>> Stashed changes

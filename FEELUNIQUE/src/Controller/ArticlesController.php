@@ -5,6 +5,10 @@ namespace App\Controller;
 use App\Data\SearchData;
 use App\Entity\Article;
 use App\Form\SearchForm;
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 use App\Repository\ArticleRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -29,16 +33,22 @@ class ArticlesController extends AbstractController
      * @return Response
      */
 
+<<<<<<< Updated upstream
     public function index(Request $request, PaginatorInterface $paginator, ArticleRepository $repository): Response    {
+=======
+    public function index(Request $request, PaginatorInterface $paginator, ArticleRepository $repository): Response
+    {
+>>>>>>> Stashed changes
         $data = new SearchData();
         $form = $this->createForm(SearchForm::class, $data);
         $form->handleRequest($request);
         $articles = $repository->findSearch($data);
         $donness = $this->getDoctrine()->getRepository(Article::class)->findAll();
+
         $articles = $paginator->paginate(
             $donness,
             $request->query->getInt('page', 1),
-            12
+            10
         );
 
         return $this->render('articles/index.html.twig', [

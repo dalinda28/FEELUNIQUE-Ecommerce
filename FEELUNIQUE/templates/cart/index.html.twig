@@ -3,6 +3,7 @@
 {% block title 'panier' %}
 
 {% block body %}
+<<<<<<< Updated upstream
 <div class="container">
     <div class="jumbotron">
         <h1 class="display-4">Votre panier</h1>
@@ -54,6 +55,73 @@
                     <td></td>
                 </tr>
                 </tfoot>
+=======
+    <div class="container" style="width: 1170px; margin-top: 100px;">
+        <div class="jumbotron">
+            <h1 class="display-4">Votre panier</h1>
+        </div>
+        {% if items | length > 0 %}
+            <table class="table">
+                <form action="" method="get" class="cart">
+                    <thead>
+                        <tr>
+                            <th>Articles</th>
+                            <th>Prix</th>
+                            <th>Quantité</th>
+                            <th>Frais de livraison</th>
+                            <th>Total</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {%  for item in items %}
+                            <tr>
+                                <td>
+                                    <a href="{{ path('article.show', {id: item.article.id, slug: item.article.slug})}}" >{{ item.article.title }}</a>
+                                </td>
+                                <td>{{ item.article.price }} €</td>
+                                <td>
+                                    <select name="quantity{{item.article.id}}" onChange="this.form.submit()" class="form-select form-select-sm w-auto">
+                                        {% for i in 1..10 %}
+                                            <option value="{{ item.quantity }}"> {{ item.quantity }}</option> 
+                                        {% endfor %}
+                                    </select>
+                                
+                                </td>
+                                <td>Offerte !</td>
+                                <td>{{  item.article.price * item.quantity }} €</td>
+                                <td>
+                                    <button href="{{ path('cart_remove', {'id': item.article.id}) }}" class="btn btn-danger btn-sm">
+                                        Supprimer<i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4" class="text-right">Total : </td>
+                            <td>{{ total }} €</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+
+                    <a href='#' class="btn btn-success float-right m-4">
+                        <i class="fas fa-check-circle mr-1"></i>
+                        Commander
+                    </a>
+                    <button type="submit" class="btn btn-success float-right m-4">
+                        <i class="fas fa-shopping-cart ml-1"></i>
+                        Mettre à jour le panier
+                    </button>
+                    
+                </form>
+            </table>
+        {% else %}
+            <p> Le panier est vide ! </p>
+        {% endif %}
+    </div>
+>>>>>>> Stashed changes
 
                 <a href='#' class="btn btn-success float-right m-4">
                     <i class="fas fa-check-circle mr-1"></i>

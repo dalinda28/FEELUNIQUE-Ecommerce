@@ -17,12 +17,20 @@ class SearchForm extends AbstractType
     {
         $builder
             ->add('q', TextType::class, [
+<<<<<<< Updated upstream
                 'label' => false,
+=======
+                'label' =>false,
+>>>>>>> Stashed changes
                 'required' => false,
                 'attr' => [
                     'placeholder' => 'Rechercher'
                 ]
             ])
+<<<<<<< Updated upstream
+=======
+            
+>>>>>>> Stashed changes
             ->add('categories', EntityType::class, [
                 'label' => false,
                 'required' => false,
@@ -30,6 +38,10 @@ class SearchForm extends AbstractType
                 'expanded' => true,
                 'multiple' => true
             ])
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
             ->add('min', NumberType::class, [
                 'label' => false,
                 'required' => false,
@@ -37,13 +49,23 @@ class SearchForm extends AbstractType
                     'placeholder' => 'Prix minimum'
                 ]
             ])
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
             ->add('max', NumberType::class, [
                 'label' => false,
                 'required' => false,
                 'attr' => [
                     'placeholder' => 'Prix maximum'
                 ]
+<<<<<<< Updated upstream
             ]);
+=======
+            ])
+
+        ;
+>>>>>>> Stashed changes
     }
 
     public function configureOptions(OptionsResolver $resolver)
@@ -61,5 +83,8 @@ class SearchForm extends AbstractType
         return '';
     }
 }
+<<<<<<< Updated upstream
 
 ?>
+=======
+>>>>>>> Stashed changes

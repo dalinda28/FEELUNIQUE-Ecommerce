@@ -2,6 +2,7 @@
 
 {% block title article.title %}
 {% block body %}
+<<<<<<< Updated upstream
     <div class="container bg-light mt-4">
         <h1>{{ article.title }}</h1>
         <div class="card">
@@ -54,6 +55,57 @@
                     </main>
                 </div>
             </div>
+=======
+<div class="container bg-light mt-4">
+    <h1>{{ article.title }}</h1>
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <aside class="col-md-6">
+                    <article class="gallery-wrap">
+                        <div class="card img-big-wrap">
+                            {% if article.filename %}
+                                <img alt="card-img-top" src=" {{ vich_uploader_asset(article, 'imageFile') }}" style="width: 100%; height: auto;">
+                            {% endif %}
+                        </div>
+                    </article> <!-- gallery-wrap .end// -->
+                </aside>
+                
+                <main class="col-md-6">
+                    <article>
+                        <a href="#" class="text-primary btn-link ">{{ article.categoryType }}</a>
+                        <h3 class="title">{{ article.title }}</h3>
+                    
+                        <hr>
+                
+                        <div class="mb-3">
+                            <h4>Description</h4>
+                            <p>{{ article.description }}</p>
+                            <p>{{ article.description }}</p>
+                        </div>
+                            
+                        <div class="mb-3">
+                            <var class="price h4">{{ article.price }} €</var> <br>
+                        </div>
+
+                        <div class="mb-4">
+                        <form action="{{ path('cart_add', {id: article.id}) }}" method="get">
+                            <select name="quantity" class="form-select form-select-sm w-auto">
+
+                                {% for i in 1..10 %}
+                                    <option value="{{ i }}"> {{ i }}</option> 
+                                {% endfor %}
+
+                            </select>
+                            <button href="{{path('cart_add', {id: article.id})}}"  class="btn btn-sm btn-outline-primary">Ajouter au panier</button>
+
+                        </form>
+                        </div>
+                            
+                    </article> 
+                </main> 
+            </div> 
+>>>>>>> Stashed changes
         </div>
     </div>
 {% endblock %}

@@ -7,7 +7,10 @@
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/monolog/monolog" />
+<<<<<<< Updated upstream
       <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/myclabs/deep-copy" />
+=======
+>>>>>>> Stashed changes
       <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/jms/metadata" />
       <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/phpdocumentor/reflection-common" />
       <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/phpdocumentor/type-resolver" />
@@ -21,6 +24,7 @@
       <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/doctrine/collections" />
       <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/knplabs/knp-components" />
       <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/doctrine/doctrine-bundle" />
+<<<<<<< Updated upstream
       <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/sebastian/diff" />
       <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/doctrine/cache" />
       <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/sebastian/comparator" />
@@ -31,6 +35,13 @@
       <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/sebastian/recursion-context" />
       <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/doctrine/lexer" />
       <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/nelmio/alice" />
+=======
+      <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/doctrine/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/doctrine/instantiator" />
+      <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/knplabs/knp-paginator-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/doctrine/event-manager" />
+      <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/doctrine/lexer" />
+>>>>>>> Stashed changes
       <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/twig/extra-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/twig/twig" />
       <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/symfony/cache-contracts" />
@@ -62,7 +73,10 @@
       <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/symfony/config" />
       <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/symfony/dependency-injection" />
       <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/symfony/polyfill-intl-normalizer" />
+<<<<<<< Updated upstream
       <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/theofidry/alice-data-fixtures" />
+=======
+>>>>>>> Stashed changes
       <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/symfony/google-mailer" />
       <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/symfony/doctrine-bridge" />
       <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/symfony/monolog-bridge" />
@@ -125,11 +139,26 @@
       <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/laminas/laminas-zendframework-bridge" />
       <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/laminas/laminas-eventmanager" />
       <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/symfony/web-server-bundle" />
+<<<<<<< Updated upstream
       <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/fakerphp/faker" />
       <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/vich/uploader-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/hautelook/alice-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/liip/imagine-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/imagine/imagine" />
+=======
+      <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/vich/uploader-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/liip/imagine-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/imagine/imagine" />
+      <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/myclabs/deep-copy" />
+      <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/sebastian/diff" />
+      <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/sebastian/comparator" />
+      <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/sebastian/exporter" />
+      <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/sebastian/recursion-context" />
+      <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/nelmio/alice" />
+      <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/theofidry/alice-data-fixtures" />
+      <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/fakerphp/faker" />
+      <excludeFolder url="file://$MODULE_DIR$/FEELUNIQUE/vendor/hautelook/alice-bundle" />
+>>>>>>> Stashed changes
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -48,5 +48,8 @@ class CategoryRepository extends ServiceEntityRepository
     }
     */
 }
+<<<<<<< Updated upstream
 
 ?>
+=======
+>>>>>>> Stashed changes

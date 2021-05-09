@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< Updated upstream
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}FEELUNIQUE{% endblock %}</title>
@@ -22,6 +23,30 @@
             }
         </style>
     </head>
+=======
+    <meta charset="UTF-8">
+    <title>{% block title %}FEELUNIQUE{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    {# Run `composer require symfony/webpack-encore-bundle`
+           and uncomment the following Encore helpers to start using Symfony UX #}
+    {% block stylesheets %}
+        {# {{ encore_entry_link_tags('app') }} #}
+    {% endblock %}
+
+    {% block javascripts %}
+        {# {{ encore_entry_script_tags('app') }} #}
+    {% endblock %}
+
+    <style>
+        .nav-item {
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+    </style>
+</head>
+>>>>>>> Stashed changes
 <body>
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light nav-fill fixed-top">
@@ -36,8 +61,12 @@
                     <a class="nav-link" href="">Blog</a>
                 </li>
                 <li class="nav-item mt-1">
+<<<<<<< Updated upstream
                     <a class="navbar-brand" href="{{ path('home') }} "
                        style="font-family: Didot,serif; font-size: 30px;">FEELUNIQUE</a>
+=======
+                    <a class="navbar-brand" href="{{ path('home') }} " style="font-family: Didot,serif; font-size: 30px;">FEELUNIQUE</a>
+>>>>>>> Stashed changes
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ path('cart_index') }}">Panier</a>
@@ -76,4 +105,8 @@
         crossorigin="anonymous"></script>
 
 </body>
+<<<<<<< Updated upstream
 </html>
+=======
+</html>
+>>>>>>> Stashed changes

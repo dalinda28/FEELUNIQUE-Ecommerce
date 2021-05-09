@@ -1,16 +1,27 @@
 <?php
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 namespace App\Data;
 
 use App\Entity\Category;
 
+<<<<<<< Updated upstream
 class SearchData
 {
+=======
+class SearchData{
+>>>>>>> Stashed changes
 
     /**
      * @var string
      */
+<<<<<<< Updated upstream
     public $q = '';
+=======
+    public $q = '' ;
+>>>>>>> Stashed changes
 
     /**
      * @var Category[]
@@ -30,5 +41,8 @@ class SearchData
 
 
 }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 ?>
