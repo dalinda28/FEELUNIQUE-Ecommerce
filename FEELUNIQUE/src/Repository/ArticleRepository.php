@@ -7,13 +7,6 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\Query;
 use Doctrine\Persistence\ManagerRegistry;
 use App\Data\SearchData;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 /**
  * @method Article|null find($id, $lockMode = null, $lockVersion = null)
  * @method Article|null findOneBy(array $criteria, array $orderBy = null)
@@ -28,8 +21,6 @@ class ArticleRepository extends ServiceEntityRepository
     }
 
     /**
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
      *  Cette fonction récupere les produits en lien avec une recherche
      * @return Article[]
      */
@@ -76,97 +67,5 @@ class ArticleRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     }
-=======
-     * Cette fonction récupere les produits en lien avec une recherche
-     * @return Article[]
-     */
-
-    public function findSearch(SearchData $search): array
-    {
-        $query = $this 
-            ->createQueryBuilder('p')
-            ->select('c', 'p')
-            ->join('p.categories', 'c');
-        
-            if (!empty($search->q))
-            {
-                $query = $query
-                    ->andWhere()('p.name LIKE :q')
-                    ->setParameter('q', "% { $search->q }%");
-            }
-
-            if (!empty($search->min))
-            {
-                $query = $query
-                    ->andWhere()('p.price LIKE :min')
-                    ->setParameter('min', "% { $search->min }%");
-            }
-
-            if (!empty($search->max))
-            {
-                $query = $query
-                    ->andWhere()('p.price LIKE :max')
-                    ->setParameter('max', "% { $search->max }%");
-            }
-
-=======
-     * Cette fonction récupere les produits en lien avec une recherche
-     * @return Article[]
-     */
-
-    public function findSearch(SearchData $search): array
-    {
-        $query = $this 
-            ->createQueryBuilder('p')
-            ->select('c', 'p')
-            ->join('p.categories', 'c');
-        
-            if (!empty($search->q))
-            {
-                $query = $query
-                    ->andWhere()('p.name LIKE :q')
-                    ->setParameter('q', "% { $search->q }%");
-            }
-
-            if (!empty($search->min))
-            {
-                $query = $query
-                    ->andWhere()('p.price LIKE :min')
-                    ->setParameter('min', "% { $search->min }%");
-            }
-
-            if (!empty($search->max))
-            {
-                $query = $query
-                    ->andWhere()('p.price LIKE :max')
-                    ->setParameter('max', "% { $search->max }%");
-            }
-
->>>>>>> Stashed changes
-            if (!empty($search->categories))
-            {
-                $query = $query
-                    ->andWhere()('p.id IN (:categories)')
-                    ->setParameter('categories', $search->categories);
-            }
-
-            return $query->getQuery()->getResult();
-    }
-
-    /**
-     * @return Article[]
-     */
-    public function findquantity() : array
-    {
-        return $this->createQueryBuilder('p')
-            ->where('p.quantity >= 0')
-            ->getQuery()
-            ->getResult();
-    }
-
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 }
 

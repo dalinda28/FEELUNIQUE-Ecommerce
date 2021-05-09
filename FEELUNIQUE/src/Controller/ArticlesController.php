@@ -5,14 +5,6 @@ namespace App\Controller;
 use App\Data\SearchData;
 use App\Entity\Article;
 use App\Form\SearchForm;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
-=======
-
->>>>>>> Stashed changes
 use App\Repository\ArticleRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -37,17 +29,8 @@ class ArticlesController extends AbstractController
      * @return Response
      */
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    public function index(Request $request, PaginatorInterface $paginator, ArticleRepository $repository): Response    {
-=======
     public function index(Request $request, PaginatorInterface $paginator, ArticleRepository $repository): Response
     {
->>>>>>> Stashed changes
-=======
-    public function index(Request $request, PaginatorInterface $paginator, ArticleRepository $repository): Response
-    {
->>>>>>> Stashed changes
         $data = new SearchData();
         $form = $this->createForm(SearchForm::class, $data);
         $form->handleRequest($request);

@@ -54,27 +54,6 @@ class User implements UserInterface, \Serializable
      */
     private $roles = [];
 
-
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    private $isVerified = false;
-
-    /**
-     * @ORM\Column(type="json")
-     */
-    private $roles = [];
-
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    private $isVerified = false;
-
-    /**
-     * @ORM\Column(type="json")
-     */
-    private $roles = [];
-
     public function getId(): ?int
     {
         return $this->id;
@@ -142,16 +121,8 @@ class User implements UserInterface, \Serializable
      *
      * @return string[] The user roles
      */
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    public function getRoles(): array
-    {
-=======
+
     public function getRoles(): array {
->>>>>>> Stashed changes
-=======
-    public function getRoles(): array {
->>>>>>> Stashed changes
         $roles = $this->roles;
         // guarantee every user at least has ROLE_USER
         $roles[] = 'ROLE_USER';
@@ -184,17 +155,9 @@ class User implements UserInterface, \Serializable
      * Returns the username used to authenticate the user.
      *
      * @return string The username
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
      * public function getUsername();
      */
-=======
-=======
->>>>>>> Stashed changes
 
-    * public function getUsername();
-    */
->>>>>>> Stashed changes
     /**
      * Removes sensitive data from the user.
      *
@@ -241,13 +204,5 @@ class User implements UserInterface, \Serializable
         $this->roles = $roles;
 
         return $this;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
     }
-=======
-=======
->>>>>>> Stashed changes
-    } 
->>>>>>> Stashed changes
-
 }

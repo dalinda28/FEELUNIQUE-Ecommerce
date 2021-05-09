@@ -17,28 +17,12 @@ class SearchForm extends AbstractType
     {
         $builder
             ->add('q', TextType::class, [
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
                 'label' => false,
-=======
-                'label' =>false,
->>>>>>> Stashed changes
-=======
-                'label' =>false,
->>>>>>> Stashed changes
                 'required' => false,
                 'attr' => [
                     'placeholder' => 'Rechercher'
                 ]
             ])
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-            
->>>>>>> Stashed changes
-=======
-            
->>>>>>> Stashed changes
             ->add('categories', EntityType::class, [
                 'label' => false,
                 'required' => false,
@@ -46,14 +30,6 @@ class SearchForm extends AbstractType
                 'expanded' => true,
                 'multiple' => true
             ])
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
-=======
-
->>>>>>> Stashed changes
             ->add('min', NumberType::class, [
                 'label' => false,
                 'required' => false,
@@ -61,33 +37,13 @@ class SearchForm extends AbstractType
                     'placeholder' => 'Prix minimum'
                 ]
             ])
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
-=======
-
->>>>>>> Stashed changes
             ->add('max', NumberType::class, [
                 'label' => false,
                 'required' => false,
                 'attr' => [
                     'placeholder' => 'Prix maximum'
                 ]
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
             ]);
-=======
-            ])
-
-        ;
->>>>>>> Stashed changes
-=======
-            ])
-
-        ;
->>>>>>> Stashed changes
     }
 
     public function configureOptions(OptionsResolver $resolver)
@@ -105,11 +61,4 @@ class SearchForm extends AbstractType
         return '';
     }
 }
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-
 ?>
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes

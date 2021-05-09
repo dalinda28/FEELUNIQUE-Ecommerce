@@ -3,15 +3,20 @@
 {% block title 'Se connecter' %}
 
 {% block body %}
+    <form action="{{ path('login') }}" method="post">
 
-    {% if error %}
-        <div class="alert alert-danger">
-            {{ error.messageKey | trans(error.messagedata, 'security') }}
-        </div>
-    {% endif %}
+        {% if error %}
+            <div class="alert alert-danger">
+                {{ error.messageKey | trans(error.messagedata, 'security') }}
+            </div>
+        {% endif %}
+        {% if app.user %}
+            <div class="mb-3">
+                You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+            </div>
+        {% endif %}
 
-    <div class="container mb-5" style="width: 500px; margin-top: 100px; margin-left: 500px;">
-        <form action="{{ path('login') }}" method="post">
+        <div class="container mb-5" style="width: 500px; margin-top: 100px; margin-left: 500px;">
             <div class="form-group">
                 <label for="username">Nom d'utilisateur</label>
                 <input type="text" id="username" name="_username" class="form-control" value="{{ last_username }}">
@@ -22,15 +27,9 @@
             </div>
 
             <button type="submit" class="btn btn-primary">Se connecter</button>
-        </form>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-        <button type="submit"><a class="nav-link" href="{{ path('app_register') }}">S'enregistrer</a></button>
-=======
-        <button type="submit"><a class="nav-link" href="{{path('app_register')}}">S'enregistrer</a></button>
->>>>>>> Stashed changes
-=======
-        <button type="submit"><a class="nav-link" href="{{path('app_register')}}">S'enregistrer</a></button>
->>>>>>> Stashed changes
-    </div>
+            <button type="submit"><a class="nav-link" href="{{ path('app_register') }}">S'enregistrer</a></button>
+
+        </div>
+    </form>
+
 {% endblock %}
