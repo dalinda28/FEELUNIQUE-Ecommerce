@@ -29,6 +29,9 @@ class Article
         3 => 'Art et collections',
 =======
         3 => 'Art et collections', 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         4 => 'Fournitures créatives',
         5 => 'Jouets et divertissements'
@@ -71,7 +74,10 @@ class Article
     private $price;
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 
 >>>>>>> Stashed changes
     /**

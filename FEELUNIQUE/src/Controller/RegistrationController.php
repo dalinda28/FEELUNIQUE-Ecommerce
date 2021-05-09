@@ -45,7 +45,11 @@ class RegistrationController extends AbstractController
         ]);
     }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes
 =======
 }
 >>>>>>> Stashed changes

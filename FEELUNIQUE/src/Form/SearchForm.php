@@ -18,7 +18,11 @@ class SearchForm extends AbstractType
         $builder
             ->add('q', TextType::class, [
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 'label' => false,
+=======
+                'label' =>false,
+>>>>>>> Stashed changes
 =======
                 'label' =>false,
 >>>>>>> Stashed changes
@@ -28,6 +32,10 @@ class SearchForm extends AbstractType
                 ]
             ])
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+            
+>>>>>>> Stashed changes
 =======
             
 >>>>>>> Stashed changes
@@ -39,6 +47,10 @@ class SearchForm extends AbstractType
                 'multiple' => true
             ])
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 =======
 
 >>>>>>> Stashed changes
@@ -50,6 +62,10 @@ class SearchForm extends AbstractType
                 ]
             ])
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 =======
 
 >>>>>>> Stashed changes
@@ -60,7 +76,13 @@ class SearchForm extends AbstractType
                     'placeholder' => 'Prix maximum'
                 ]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             ]);
+=======
+            ])
+
+        ;
+>>>>>>> Stashed changes
 =======
             ])
 
@@ -84,7 +106,10 @@ class SearchForm extends AbstractType
     }
 }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 ?>
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes

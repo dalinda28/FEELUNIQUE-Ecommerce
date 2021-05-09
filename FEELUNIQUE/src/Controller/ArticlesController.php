@@ -6,6 +6,10 @@ use App\Data\SearchData;
 use App\Entity\Article;
 use App\Form\SearchForm;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 =======
 
 >>>>>>> Stashed changes
@@ -34,7 +38,12 @@ class ArticlesController extends AbstractController
      */
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     public function index(Request $request, PaginatorInterface $paginator, ArticleRepository $repository): Response    {
+=======
+    public function index(Request $request, PaginatorInterface $paginator, ArticleRepository $repository): Response
+    {
+>>>>>>> Stashed changes
 =======
     public function index(Request $request, PaginatorInterface $paginator, ArticleRepository $repository): Response
     {

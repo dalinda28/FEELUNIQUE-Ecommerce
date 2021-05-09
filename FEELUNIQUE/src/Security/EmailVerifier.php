@@ -55,7 +55,10 @@ class EmailVerifier
     }
 }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 ?>
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
