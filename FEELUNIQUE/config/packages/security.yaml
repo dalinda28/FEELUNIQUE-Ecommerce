@@ -4,7 +4,7 @@ security:
         from_database: 
             entity: 
                 class: App\Entity\User
-                property: email
+                property: username
 
         #username : admin
         #mdp : adminadmin
