@@ -26,6 +26,7 @@
             }
 
             $total = 0;
+
             foreach ($panierWithData as $item){
                 $totalItem = $item['article']->getPrice() * $item['quantity'];
                 $total += $totalItem;
@@ -51,7 +52,7 @@
             }
 
             $session->set('panier', $panier);
-
+            
             return $this->redirectToRoute("cart_index");
         }
 

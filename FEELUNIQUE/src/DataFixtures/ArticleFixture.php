@@ -8,8 +8,6 @@ use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
 class ArticleFixture extends Fixture
 {
-
-
     public function load(ObjectManager $manager)
     {
         $faker = Factory::create('fr_FR');
@@ -20,7 +18,6 @@ class ArticleFixture extends Fixture
                 ->setTitle($faker->words(3, true))
                 ->setDescription($faker->sentences(3, true))
                 ->setPrice($faker->numberBetween(10, 100))
-                ->setimage($faker->numberBetween(3, 10))
                 ->setCategory($faker->numberBetween(0, 5))
                 ->setQuantity($faker->numberBetween(10, 100));
             $manager->persist($article);

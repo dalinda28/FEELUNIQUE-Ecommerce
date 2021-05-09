@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Data\SearchData;
 use App\Entity\Article;
+use App\Form\SearchForm;
 use App\Repository\ArticleRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -21,34 +23,29 @@ class ArticlesController extends AbstractController
     {
         $this->repository = $repository;
     }
-/*
-    public function index(PaginatorInterface $paginator, Request  $request) : Response{
-        $article = $paginator->paginate(
-            $this->repository->findAllVisibleQuery(),
-            $request->query->getInt('page', 1),
-        10);
-        return $this->render('articles/show.html.twig', [
-            'article' => $article,
-            'current_menu' =>$article
-        ]);
-    }*/
 
     /**
      * @Route("/articles", name="articles")
      * @return Response
      */
 
-    public function createArticle(Request $request, PaginatorInterface $paginator): Response
+    public function index(Request $request, PaginatorInterface $paginator, ArticleRepository $repository): Response
     {
+        $data = new SearchData();
+        $form = $this->createForm(SearchForm::class, $data);
+        $form->handleRequest($request);
+        $articles = $repository->findSearch($data);
         $donness = $this->getDoctrine()->getRepository(Article::class)->findAll();
+
         $articles = $paginator->paginate(
             $donness,
             $request->query->getInt('page', 1),
-            12
+            10
         );
 
         return $this->render('articles/index.html.twig', [
             'articles' => $articles,
+            'form' => $form->createView()
         ]);
     }
 
@@ -69,7 +66,7 @@ class ArticlesController extends AbstractController
 
         return $this->render('articles/show.html.twig', [
             'article' => $article,
-            'current_menu' =>$article
+            'current_menu' => $article
         ]);
     }
 }
