@@ -12,10 +12,10 @@
             </div>
 
             {% for article in articles %}
-                <div class="col-md-3 mt-4">
+                <div class="col-md-3 mt-4" >
                     <div class="card card-product-grid">
                         {% if article.filename %}
-                            <img alt="card-img-top" src=" {{ vich_uploader_asset(article, 'imageFile') }}"
+                            <img alt="card-img-top" style="height: 300px" src=" {{ vich_uploader_asset(article, 'imageFile') }}"
                                  style="width: 100%; height: auto;">
                         {% else %}
                             <img alt="card-img-top" src=" {{ '/images/articles/empty.jpg' }}"

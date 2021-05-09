@@ -27,7 +27,8 @@ class Article
         2 => 'Maison et Déco',
         3 => 'Art et collections',
         4 => 'Fournitures créatives',
-        5 => 'Jouets et divertissements'
+        5 => 'Jouets et divertissements',
+        6 => 'Maquillage'
     ];
 
     /**
