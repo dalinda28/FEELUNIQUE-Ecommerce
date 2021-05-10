@@ -4,8 +4,8 @@
 
 {% block body %}
 <div class="container" style="width: 1170px; margin-top: 100px;">
-    <div class="jumbotron">
-        <h1 class="display-4">Votre panier</h1>
+    <div class="bg-light p-3">
+        <h1 class="text-center">Votre panier</h1>
     </div>
     {% if items | length > 0 %}
         <table class="table">
@@ -55,7 +55,7 @@
                 </tr>
                 </tfoot>
 
-                <a href='#' class="btn btn-success float-right m-4">
+                <a href='{{ path('save_order') }}' class="btn btn-success float-right m-4">
                     <i class="fas fa-check-circle mr-1"></i>
                     Commander
                 </a>

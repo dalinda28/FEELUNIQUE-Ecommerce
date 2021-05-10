@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Commandes{% endblock %}
+
+{% block body %}
+    <div class="container" style="width: 1170px; margin-top: 100px;">
+        <div class="bg-light p-3">
+            <h1 class="text-center">Vos commandes</h1>
+        </div>
+
+        <div class="row">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>N° commande</th>
+                    <th>Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for order in orders %}
+                    {% if order.username.id == app.user.id and app.user.orders %}
+
+                        <tr>
+                            <td>Commande n°{{ order.orderNumber }}</a></td>
+                            <td>Effectuée le {{ order.orderedAt | date('d/m/Y à H:i') }}</td>
+                        </tr>
+
+                    {% else %}
+
+                    {% endif %}
+
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

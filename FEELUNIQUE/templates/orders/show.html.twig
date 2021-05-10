@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes commandes{% endblock %}
+
+{% block body %}
+    <div class="bg-light p-3">
+        <h1>Commande n°{{ order.orderNumber }}</h1>
+    </div>
+    <div class="row">   
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Produit</th>
+                    <th>Quantité</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto voluptates quidem nihil soluta praesentium, obcaecati quam odio reprehenderit necessitatibus doloribus sunt reiciendis totam non modi, accusantium quibusdam, dolores enim eligendi?</td>
+                    <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit non, eum tempora facilis est sequi sapiente odio quisquam vero quidem provident neque ipsum, eius laborum amet! Aut facere magni nihil!
+                    <5></5></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+{% endblock %}
