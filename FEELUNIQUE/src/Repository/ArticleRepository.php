@@ -34,23 +34,23 @@ class ArticleRepository extends ServiceEntityRepository
 
         if (!empty($search->q)) {
             $query = $query
-                ->andWhere()('p.name LIKE :q')
+                ->andWhere('p.title LIKE :q')
                     ->setParameter('q', "% { $search->q }%");
             }
 
         if (!empty($search->min)) {
             $query = $query
-                ->andWhere()('p.price LIKE :min')
+                ->andWhere('p.price LIKE :min')
                     ->setParameter('min', "% { $search->min }%");
             }
         if (!empty($search->max)) {
             $query = $query
-                ->andWhere()('p.price LIKE :max')
+                ->andWhere('p.price LIKE :max')
                     ->setParameter('max', "% { $search->max }%");
             }
         if (!empty($search->categories)) {
             $query = $query
-                ->andWhere()('p.id IN (:categories)')
+                ->andWhere('p.id IN (:categories)')
                     ->setParameter('categories', $search->categories);
             }
 
