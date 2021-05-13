@@ -13,7 +13,7 @@ Cahier des charges :
 
 - A la visualisation de la commande, le montant de chaque ligne sera affiché, ainsi que le montant total et le prix du transport. OK
 
-- Pour payer, l'acheteur devra se connecter, s'il se connecte pour la première fois, il devra s'enregistrer en fournissant son nom,  son e-mail un password et une adresse de livraison.
+- Pour payer, l'acheteur devra se connecter, s'il se connecte pour la première fois, il devra s'enregistrer en fournissant son nom,  son e-mail un password et une adresse de livraison. OK
 
 - Lorsque l'utilisateur se connecte à la boutique, ses paramètres de connexion le suivront en variable de session. OK
 
@@ -21,4 +21,4 @@ Cahier des charges :
 
 - Le back-office de la boutique permettra de gérer le catalogue. OK
 
-- L'utilisateur aura accès à son profil pour le mettre à jour.
+- L'utilisateur aura accès à son profil pour le mettre à jour. OK
