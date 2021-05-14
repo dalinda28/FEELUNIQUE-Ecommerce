@@ -28,8 +28,13 @@ class Article
         3 => 'Art et collections',
         4 => 'Fournitures créatives',
         5 => 'Jouets et divertissements',
-        6 => 'Maquillage'
+        6 => 'Maquillages'
     ];
+
+    /**
+     * @var string
+     */
+    public $q = '';
 
     /**
      * @ORM\Id

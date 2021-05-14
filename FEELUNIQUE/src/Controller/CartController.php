@@ -20,25 +20,21 @@
             $panier = $session->get('panier', []);
 
             $panierWithData = [] ;
-
+            $total = 0;
             foreach($panier as $id => $quantity){
+                $article = $articleRepository->find($id);
                 $panierWithData[] = [
-                    'article' => $articleRepository->find($id),
+                    'article' => $article,
                     'quantity' => $quantity
                 ];
-            }
-
-            $total = 0;
-
-            foreach ($panierWithData as $item){
-                $totalItem = $item['article']->getPrice() * $item['quantity'];
-                $total += $totalItem;
+                $total += $article->getPrice() * $quantity;
             }
 
             return $this->render('cart/index.html.twig', [
                 'items' =>$panierWithData,
                 'total' =>$total
             ]);
+
         }
 
         /**
@@ -55,7 +51,25 @@
             }
 
             $session->set('panier', $panier);
-            
+
+            return $this->redirectToRoute("cart_index");
+        }
+
+        /**
+         * @Route("/panier/less/{id}", name="cart_less")
+         */
+        public function less($id, SessionInterface $session ){
+
+            $panier = $session->get('panier', []);
+
+            if(!empty(($panier[$id]))){
+                $panier[$id]--;
+            }else{
+                $panier[$id] = 1;
+            }
+
+            $session->set('panier', $panier);
+
             return $this->redirectToRoute("cart_index");
         }
 
