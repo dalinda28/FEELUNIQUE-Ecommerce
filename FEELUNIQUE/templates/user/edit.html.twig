@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block body %}
+    <div class="container" style="width: 1170px; margin-top: 100px;">
+        <div class="bg-light p-3">
+            <h1 class="text-center">Bonjour {{ app.user.username }} - Modifier le profil</h1>
+        </div>
+        <div class="grix xs2" style=" margin: 50px" >
+            <div class="col-xs1">{{ form(form) }}</div>
+
+        </div>
+    </div>
+{% endblock %}
+

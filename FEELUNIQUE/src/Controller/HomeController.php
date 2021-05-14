@@ -18,6 +18,18 @@
         {
             return $this->render('pages/home.html.twig');
         }
+
+        /**
+         * @Route("/blog", name="blog")
+         * @return Response
+         */
+
+        public function blog(): Response
+        {
+            return $this->render('pages/blog.html.twig');
+        }
+
+
     }
 
 ?>

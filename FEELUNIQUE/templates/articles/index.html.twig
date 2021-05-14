@@ -26,14 +26,12 @@
                                 <a class="text-decoration-none"
                                    href="{{ path('article.show', {id: article.id, slug: article.slug}) }}">{{ article.title }}</a>
                                 <div>
-                                    {% for c in article.categories %}
-                                        <p class="text-muted">{{ c.name }} </p>
-                                    {% endfor %}
+                                    <p class="text-muted"> {{ article.categoryType }}</p>
                                 </div>
                             </figcaption>
                             <div class="mt-2">
                                 <a href="{{ path('cart_add', {id: article.id}) }}"
-                                   class="btn btn-sm btn-outline-primary float-right">Acheter</a>
+                                   class="btn btn-sm btn-outline-primary float-right">Ajouter au panier</a>
                                 <i class="fas fa-shopping-cart"></i>
                             </div>
                             <div class="font-weight-bold card-text">{{ article.formattedPrice }} €</div>
