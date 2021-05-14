@@ -6,6 +6,7 @@ use App\Data\SearchData;
 use App\Entity\Article;
 use App\Form\SearchForm;
 use App\Repository\ArticleRepository;
+use App\Repository\CategoryRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -29,13 +30,15 @@ class ArticlesController extends AbstractController
      * @return Response
      */
 
-    public function index(Request $request, PaginatorInterface $paginator, ArticleRepository $repository): Response
+    public function index(Request $request, PaginatorInterface $paginator, ArticleRepository $repository, CategoryRepository $categories): Response
     {
         $data = new SearchData();
         $form = $this->createForm(SearchForm::class, $data);
         $form->handleRequest($request);
         $articles = $repository->findSearch($data);
         $donness = $this->getDoctrine()->getRepository(Article::class)->findAll();
+
+        $categories = $categories->findAll();
 
         $articles = $paginator->paginate(
             $donness,
@@ -45,7 +48,8 @@ class ArticlesController extends AbstractController
 
         return $this->render('articles/index.html.twig', [
             'articles' => $articles,
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'categories' => $categories
         ]);
     }
 
