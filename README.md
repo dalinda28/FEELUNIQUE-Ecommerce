@@ -19,6 +19,6 @@ Cahier des charges :
 
 - On ne demande pas le traitement du paiement (pas de tunnel d'achat). OK
 
-- Le back-office de la boutique permettra de gérer le catalogue. OK
+- Le back-office de la boutique permettra de gérer le catalogue. OK ( /admin )
 
 - L'utilisateur aura accès à son profil pour le mettre à jour. OK
