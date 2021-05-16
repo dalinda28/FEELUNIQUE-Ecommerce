@@ -4,13 +4,13 @@
 
 {% block body %}
 
-    <div class="container" style="width: 1170px; margin-top: 100px;">
+    <div class="container">
         <h2>Nos articles</h2>
         <div class="row ">
 
             <div class="col-md-3  mt-4">
-                {% include 'articles/filter.html.twig' %}
-                {# {% include 'articles/filter.html.twig' with {form: form} only %} #}
+                {# {% include 'articles/filter.html.twig' %}  #}
+                 {% include 'articles/filter.html.twig' with {form: form} only %}
             </div>
 
             {% for article in articles %}
@@ -43,7 +43,9 @@
                     </div>
                 </div>
             {% endfor %}
-            {{ knp_pagination_render(articles) }}
+            <div class="m-4">
+                {{ knp_pagination_render(articles) }}
+            </div>
         </div>
     </div>
 {% endblock %}

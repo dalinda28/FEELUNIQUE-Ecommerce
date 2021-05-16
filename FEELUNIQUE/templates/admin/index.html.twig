@@ -3,7 +3,7 @@
 {% block title 'Gérer les articles' %}
 
 {% block body %}
-<div class="container mt-4">
+<div class="container" >
     <h1>Gérer les articles</h1>
 
     {% for message in app.flashes('success') %}
@@ -37,7 +37,7 @@
     </table>
 
     <div class="text-right">
-        <a href="{{ path('admin.article.new') }}" class="btn btn-primary">Ajouter un nouveau article</a>
+        <a href="{{ path('admin.article.new') }}" class="btn btn-primary m-4">Ajouter un nouveau article</a>
 
     </div>
 </div>

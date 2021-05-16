@@ -5,8 +5,12 @@ namespace App\Repository;
 use App\Entity\Article;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\Query;
+use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 use App\Data\SearchData;
+use Knp\Component\Pager\Pagination\PaginationInterface;
+use Knp\Component\Pager\PaginatorInterface;
+
 /**
  * @method Article|null find($id, $lockMode = null, $lockVersion = null)
  * @method Article|null findOneBy(array $criteria, array $orderBy = null)
@@ -15,18 +19,33 @@ use App\Data\SearchData;
  */
 class ArticleRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
+    /**
+     * @var PaginatorInterface
+     */
+    private $paginator;
+
+    public function __construct(ManagerRegistry $registry, PaginatorInterface $paginator)
     {
         parent::__construct($registry, Article::class);
+        $this->paginator = $paginator;
     }
 
     /**
-     *  Cette fonction récupere les produits en lien avec une recherche
-     * @return Article[]
+     * Récupère les produits en lien avec une recherche
+     * @return PaginationInterface
      */
-    public function findSearch(SearchData $search): array
+    public function findSearch(SearchData $search): PaginationInterface
     {
+        $query = $this->getSearchQuery($search)->getQuery();
+        return $this->paginator->paginate(
+            $query,
+            $search->page,
+            9
+        );
+    }
 
+    private function getSearchQuery(SearchData $search, $ignorePrice = false): QueryBuilder
+    {
         $query = $this
             ->createQueryBuilder('p')
             ->select('c', 'p')
@@ -34,27 +53,17 @@ class ArticleRepository extends ServiceEntityRepository
 
         if (!empty($search->q)) {
             $query = $query
-                ->andWhere('p.title LIKE :q')
-                    ->setParameter('q', "% { $search->q }%");
-            }
+                ->andWhere('p.name LIKE :q')
+                ->setParameter('q', "%{$search->q}%");
+        }
 
-        if (!empty($search->min)) {
-            $query = $query
-                ->andWhere('p.price LIKE :min')
-                    ->setParameter('min', "% { $search->min }%");
-            }
-        if (!empty($search->max)) {
-            $query = $query
-                ->andWhere('p.price LIKE :max')
-                    ->setParameter('max', "% { $search->max }%");
-            }
         if (!empty($search->categories)) {
             $query = $query
-                ->andWhere('p.id IN (:categories)')
-                    ->setParameter('categories', $search->categories);
-            }
+                ->andWhere('c.id IN (:categories)')
+                ->setParameter('categories', $search->categories);
+        }
 
-        return $query->getQuery()->getResult();
+        return $query;
     }
 
     /**
@@ -67,5 +76,6 @@ class ArticleRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     }
+
 }
 

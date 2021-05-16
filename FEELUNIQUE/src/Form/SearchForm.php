@@ -29,20 +29,6 @@ class SearchForm extends AbstractType
                 'class' => Category::class,
                 'expanded' => true,
                 'multiple' => true
-            ])
-            ->add('min', NumberType::class, [
-                'label' => false,
-                'required' => false,
-                'attr' => [
-                    'placeholder' => 'Prix minimum'
-                ]
-            ])
-            ->add('max', NumberType::class, [
-                'label' => false,
-                'required' => false,
-                'attr' => [
-                    'placeholder' => 'Prix maximum'
-                ]
             ]);
     }
 

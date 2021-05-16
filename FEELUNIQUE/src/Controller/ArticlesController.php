@@ -30,15 +30,13 @@ class ArticlesController extends AbstractController
      * @return Response
      */
 
-    public function index(Request $request, PaginatorInterface $paginator, ArticleRepository $repository, CategoryRepository $categories): Response
+    public function index(Request $request, PaginatorInterface $paginator, ArticleRepository $repository): Response
     {
         $data = new SearchData();
         $form = $this->createForm(SearchForm::class, $data);
         $form->handleRequest($request);
         $articles = $repository->findSearch($data);
         $donness = $this->getDoctrine()->getRepository(Article::class)->findAll();
-
-        $categories = $categories->findAll();
 
         $articles = $paginator->paginate(
             $donness,
@@ -49,7 +47,6 @@ class ArticlesController extends AbstractController
         return $this->render('articles/index.html.twig', [
             'articles' => $articles,
             'form' => $form->createView(),
-            'categories' => $categories
         ]);
     }
 
