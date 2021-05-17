@@ -1,0 +1,17 @@
+{# <h4 class="mt-4">Catégories</h4>
+<form>
+    {% for c in categories %}
+        <p><input type="checkbox" name="categories" id="cat{{ c.id }}" value="{{ c.id }}"/>
+            <label for="cat{{ c.id }}"> {{ c.name }}</label></p>
+    {% endfor %}
+</form>
+<button type="submit" class="btn btn-light w-100 mt-3">Filtrer</button>
+#}
+
+{{ form_start(form) }}
+
+    {{ form_row(form.q) }}
+    <h4 class="mt-4">Catégories</h4>
+    {{ form_row(form.categories) }}
+<button type="submit" class="btn btn-light w-100 mt-3">Filtrer</button>
+{{ form_end(form) }}

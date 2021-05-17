@@ -3,13 +3,7 @@
   <component name="PhpIncludePathManager">
     <include_path>
       <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/monolog/monolog" />
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
       <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/myclabs/deep-copy" />
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
       <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/jms/metadata" />
       <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/phpdocumentor/reflection-common" />
       <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/phpdocumentor/type-resolver" />
@@ -23,8 +17,6 @@
       <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/doctrine/collections" />
       <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/knplabs/knp-components" />
       <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/doctrine/doctrine-bundle" />
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
       <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/sebastian/diff" />
       <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/doctrine/cache" />
       <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/sebastian/comparator" />
@@ -35,20 +27,6 @@
       <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/sebastian/recursion-context" />
       <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/doctrine/lexer" />
       <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/nelmio/alice" />
-=======
-      <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/doctrine/cache" />
-      <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/doctrine/instantiator" />
-      <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/knplabs/knp-paginator-bundle" />
-      <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/doctrine/event-manager" />
-      <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/doctrine/lexer" />
->>>>>>> Stashed changes
-=======
-      <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/doctrine/cache" />
-      <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/doctrine/instantiator" />
-      <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/knplabs/knp-paginator-bundle" />
-      <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/doctrine/event-manager" />
-      <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/doctrine/lexer" />
->>>>>>> Stashed changes
       <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/twig/extra-bundle" />
       <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/twig/twig" />
       <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/symfony/cache-contracts" />
@@ -80,13 +58,7 @@
       <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/symfony/config" />
       <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/symfony/dependency-injection" />
       <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/symfony/polyfill-intl-normalizer" />
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
       <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/theofidry/alice-data-fixtures" />
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
       <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/symfony/google-mailer" />
       <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/symfony/doctrine-bridge" />
       <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/symfony/monolog-bridge" />
@@ -149,35 +121,11 @@
       <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/laminas/laminas-zendframework-bridge" />
       <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/laminas/laminas-eventmanager" />
       <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/symfony/web-server-bundle" />
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
       <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/fakerphp/faker" />
       <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/vich/uploader-bundle" />
       <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/hautelook/alice-bundle" />
       <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/liip/imagine-bundle" />
       <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/imagine/imagine" />
-=======
-=======
->>>>>>> Stashed changes
-      <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/vich/uploader-bundle" />
-      <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/liip/imagine-bundle" />
-      <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/imagine/imagine" />
-      <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/myclabs/deep-copy" />
-      <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/sebastian/diff" />
-      <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/sebastian/comparator" />
-      <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/sebastian/exporter" />
-      <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/sebastian/recursion-context" />
-      <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/nelmio/alice" />
-      <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/theofidry/alice-data-fixtures" />
-      <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/fakerphp/faker" />
-      <path value="$PROJECT_DIR$/FEELUNIQUE/vendor/hautelook/alice-bundle" />
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
     </include_path>
-  </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="7.2">
-    <option name="suggestChangeDefaultLanguageLevel" value="false" />
   </component>
 </project>

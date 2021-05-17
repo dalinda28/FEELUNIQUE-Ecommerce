@@ -554,10 +554,6 @@ class TextDescriptor extends Descriptor
                 $r = new \ReflectionFunction($controller);
             }
         } catch (\ReflectionException $e) {
-            if (\is_array($controller)) {
-                $controller = implode('::', $controller);
-            }
-
             $id = $controller;
             $method = '__invoke';
 

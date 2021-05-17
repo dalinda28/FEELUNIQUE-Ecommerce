@@ -99,7 +99,7 @@ class QuestionHelper extends Helper
     /**
      * Asks the question to the user.
      *
-     * @return mixed
+     * @return bool|mixed|string|null
      *
      * @throws RuntimeException In case the fallback is deactivated and the response cannot be hidden
      */

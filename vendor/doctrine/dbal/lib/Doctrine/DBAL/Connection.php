@@ -18,6 +18,7 @@ use Doctrine\DBAL\Exception\NoKeyValue;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Query\Expression\ExpressionBuilder;
 use Doctrine\DBAL\Query\QueryBuilder;
+use Doctrine\DBAL\Result as BaseResult;
 use Doctrine\DBAL\Schema\AbstractSchemaManager;
 use Doctrine\DBAL\Types\Type;
 use Doctrine\Deprecations\Deprecation;
@@ -1263,9 +1264,7 @@ class Connection implements DriverConnection
      * @param array<int, mixed>|array<string, mixed>                               $params Query parameters
      * @param array<int, int|string|Type|null>|array<string, int|string|Type|null> $types  Parameter types
      *
-     * @return ForwardCompatibility\DriverStatement|ForwardCompatibility\DriverResultStatement
-     *
-     * The executed statement or the cached result statement if a query cache profile is used
+     * @return ResultStatement&BaseResult The executed statement.
      *
      * @throws Exception
      */
@@ -1321,7 +1320,7 @@ class Connection implements DriverConnection
      * @param array<int, mixed>|array<string, mixed>                               $params Query parameters
      * @param array<int, int|string|Type|null>|array<string, int|string|Type|null> $types  Parameter types
      *
-     * @return ForwardCompatibility\DriverResultStatement
+     * @return ResultStatement&BaseResult
      *
      * @throws CacheException
      */
@@ -1366,11 +1365,15 @@ class Connection implements DriverConnection
     }
 
     /**
-     * @return ForwardCompatibility\Result
+     * @return ResultStatement&BaseResult
      */
     private function ensureForwardCompatibilityStatement(ResultStatement $stmt)
     {
-        return ForwardCompatibility\Result::ensure($stmt);
+        if ($stmt instanceof BaseResult) {
+            return $stmt;
+        }
+
+        return new ForwardCompatibility\Result($stmt);
     }
 
     /**
