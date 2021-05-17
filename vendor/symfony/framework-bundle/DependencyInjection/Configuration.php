@@ -40,6 +40,9 @@ use Symfony\Component\Workflow\WorkflowEvents;
 
 /**
  * FrameworkExtension configuration structure.
+ *
+ * @author Jeremy Mikola <jmikola@gmail.com>
+ * @author Grégoire Pineau <lyrixx@lyrixx.info>
  */
 class Configuration implements ConfigurationInterface
 {

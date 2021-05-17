@@ -1,11 +1,6 @@
 CHANGELOG
 =========
 
-5.2
----
-
-* Add `name` argument to the `StopWatchEvent` constructor, accessible via a new `StopwatchEvent::getName()`
-
 5.0.0
 -----
 

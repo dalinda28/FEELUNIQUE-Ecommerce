@@ -254,7 +254,7 @@ final class DbalExecutor implements Executor
         $migration = $plan->getMigration();
         if ($migration->isTransactional()) {
             //only rollback transaction if in transactional mode
-            TransactionHelper::rollbackIfInTransaction($this->connection);
+            $this->connection->rollBack();
         }
 
         $plan->markAsExecuted($result);
