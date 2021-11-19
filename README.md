@@ -22,3 +22,12 @@ Cahier des charges :
 - Le back-office de la boutique permettra de gérer le catalogue. OK ( /admin )
 
 - L'utilisateur aura accès à son profil pour le mettre à jour. OK
+
+#Screenshoots
+![alt text](https://github.com/dalinda28/FEELUNIQUE-Ecommerce/blob/main/FEELUNIQUE1.png?raw=true)
+
+![alt text](https://github.com/dalinda28/FEELUNIQUE-Ecommerce/blob/main/FEELUNIQUE2.png?raw=true)
+
+![alt text](https://github.com/dalinda28/FEELUNIQUE-Ecommerce/blob/main/FEELUNIQUE3.png?raw=true)
+
+
